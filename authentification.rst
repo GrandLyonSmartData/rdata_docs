@@ -18,7 +18,7 @@ La méthode d'authentification utilisée est le `Basic Auth HTTP <http://fr.wiki
 
   Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
  
-Mais ne vous y méprenez pas. L'encodage en base64 n'est pas un cryptage ! Le procédé est réversible et on peut donc retrouver les valeurs encodés très facilement. Couplé à un flux HTTPS, qui chiffre les informations transmises par et vers le serveur, ils ne sont pas récupérables, mais écrits tels quels dans le code ils le sont. 
+Mais ne vous y méprenez pas. L'encodage en base64 n'est pas une opération de chiffrement ! Le procédé est réversible et on peut donc retrouver les valeurs encodés très facilement. Couplé à un flux HTTPS, qui chiffre les informations transmises par et vers le serveur, ils ne sont pas récupérables, mais écrits tels quels dans le code ils le sont. 
 
 
 Exemple avec cURL et WGET
