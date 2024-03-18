@@ -41,7 +41,7 @@ Code source correspondant :
               }
             });
             //URL du service data
-            var data_url = "https://download.data.grandlyon.com/wfs/rdata?";
+            var data_url = "https://data.grandlyon.com/geoserver/wfs?";
             //Définition du proxy pour gérer le cross-domain. Voir le paragraphe Bonne Pratiques -> Proxyfication pour plus d'information
             OpenLayers.ProxyHost = "/cgi-bin/proxy.cgi?url=";
             
@@ -154,7 +154,7 @@ Code source correspondant :
             //Initialisation de la map
             var map = L.map('map').setView([45.76, 4.85], 14);
             //Layer WMS sur une orthophoto
-            L.tileLayer.wms("https://download.data.grandlyon.com/wms/grandlyon",{
+            L.tileLayer.wms("https://data.grandlyon.com/geoserver/wms",{
                     layers: '1840_5175_16_CC46',
                     format: 'image/png',
                     transparent: true,    
@@ -170,7 +170,7 @@ Code source correspondant :
             
             //Définition du proxy pour le WFS (cross domain). Voir le paragraphe Bonne Pratiques -> Proxyfication pour plus d'information
             var proxy = "proxy.php?url=";
-            var data_url = "https://download.data.grandlyon.com/wfs/rdata";
+            var data_url = "https://data.grandlyon.com/geoserver/wfs";
             var params = '?SERVICE=WFS
                 &REQUEST=GetFeature
                 &VERSION=1.1.0
@@ -280,7 +280,7 @@ Code source correspondant :
                 mapOptions);
             
             //Ajout WMS sur l'aménagement cyclable
-            var urlWMS = "https://download.data.grandlyon.com/wms/grandlyon?"
+            var urlWMS = "https://data.grandlyon.com/geoserver/wms?"
                     + "&REQUEST=GetMap&SERVICE=WMS&VERSION=1.3.0&CRS=EPSG:4171"
                     + "&LAYERS=pvo_patrimoine_voirie.pvoamenagementcyclable"
                     + "&FORMAT=image/png&TRANSPARENT=TRUE&WIDTH=256&HEIGHT=256";
@@ -315,8 +315,8 @@ Code source correspondant :
             
             //Ajout KML layer
             var KML_Layer = new google.maps.KmlLayer({
-              url: 'https://download.data.grandlyon.com/kml/grandlyon/?'
-                +'request=layer&typename=pvo_patrimoine_voirie.pvostationvelov'
+              url: 'https://data.grandlyon.com/geoserver/wms?'
+                +'format=KML&request=layer&typename=pvo_patrimoine_voirie.pvostationvelov'
             });
             KML_Layer.setMap(map);
       
@@ -335,54 +335,22 @@ Utilisation du WCS
 -------------------
 Cet exemple montre l'utilisation du service WCS pour obtenir les données brutes sur le NO2 en 2012.
 Nous utiliserons dans ces exemples la version 2.0.1 qui est la plus récente. Il est encore possible d'utiliser aussi les versions 1.1.1 ou 1.0.0.
-
 **Etape 1** : lecture des capacités du service
-
-https://download.data.grandlyon.com/wcs/rdata?SERVICE=WCS&REQUEST=GetCapabilities&VERSION=2.0.1
-
+https://data.grandlyon.com/wcs/rdata?SERVICE=WCS&REQUEST=GetCapabilities&VERSION=2.0.1
 .. image:: _static/wcs_GetCapabilities.png
-
 Parmi les informations retournées, on peut consulter les formats de sortie disponibles. Le WCS est un service destiné à fournir de la donnée brute (raw data). Il est donc recommandé de l'utiliser avec un format comme **image/x-aaigrid** pour un raster monobande ou **image/tiff** pour un raster multibandes, plutôt qu'avec un des formats de sortie prévus pour la visualisation, comme **image/jpeg** ou **image/gif**.
-
-Dans la dernière partie du XML renvoyé, on trouve la liste des couvertures disponibles pour ce service, dont la couverture **Carte_agglo_lyon_NO2_2012**, que nous utiliserons dans la suite de l'exemple.
+Dans la dernière partie du XML renvoyé, on trouve la liste des couvertures disponibles pour ce service, dont la couverture **grandlyon:STFONS_Step_02cm_2018**, que nous utiliserons dans la suite de l'exemple.
 	
 **Etape 2** : détail d'une couverture 
-
-https://download.data.grandlyon.com/wcs/rdata?SERVICE=WCS&REQUEST=DescribeCoverage&VERSION=2.0.1&COVERAGEID=Carte_agglo_Lyon_NO2_2012
-
+https://data.grandlyon.com/geoserver/wcs?SERVICE=WCS&REQUEST=DescribeCoverage&VERSION=2.0.1&COVERAGEID=grandlyon:STFONS_Step_02cm_2018
 Attention, en version 2.0.1, le paramètre pour indiquer la couverture demandée est **COVERAGEID**, mais en version 1.0 c'est **IDENTIFIER** et en version 1.1, c'est **COVERAGE**. 
-
-Attention également à la casse dans le nom de la couverture demandée si vous testez manuellement les requêtes : le service WCS y est sensible. Ainsi la couverture *Carte_agglo_lyon_NO2_2012* (avec un l minuscule pour Lyon) ne sera pas trouvée.
-
+Attention également à la casse dans le nom de la couverture demandée si vous testez manuellement les requêtes : le service WCS y est sensible. Ainsi la couverture *grandlyon:sTFONS_Step_02cm_2018* (avec un s minuscule ) ne sera pas trouvée.
 .. image:: _static/wcs_DescribeCoverage.png
-
 Cette requête permet d'obtenir tous les détails de la couverture comme son étendue géographique ou des informations sur les bandes. On voit ainsi dans notre cas qu'il s'agit d'images multi-canaux à 3 bandes.
 
-
 **Etape 3** : obtention de la couverture
-
-La requête suivante permet d'obtenir un extrait du raster au format TIFF :
-
-https://download.data.grandlyon.com/wcs/rdata?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/tiff&COVERAGEID=Carte_agglo_Lyon_NO2_2012&SUBSET=x,http://www.opengis.net/def/crs/EPSG/0/2154(846414,847568)&SUBSET=y,http://www.opengis.net/def/crs/EPSG/0/2154(6521761,6522840)&OUTPUTCRS=urn:ogc:def:crs:EPSG::2154
-
-Un aperçu du raster obtenu avec une colorisation des 3 bandes :
-
-.. image:: _static/wcs_GetCoverageTiff.tif
-
-Il est aussi possible de n'extraire qu'une seule bande en utilisant le paramètre RANGESUBSET. Ce paramètre permet de choisir les bandes à utiliser, de les réorganiser, etc.. Le plus simple est d'indiquer la bande par son index (la première bande commence à 1). Il est aussi possible de mixer des références aux bandes via des intervalles. Par exemple : RANGESUBSET=1,3:5,7
-
-Avec une seule bande, on peut alors utiliser le format de sortie x-aaigrid (Arc/Info ASCII Grid).
-
-https://download.data.grandlyon.com/wcs/rdata?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/x-aaigrid&COVERAGEID=Carte_agglo_Lyon_NO2_2012&RANGESUBSET=1&SUBSET=x,http://www.opengis.net/def/crs/EPSG/0/2154(846414,847568)&SUBSET=y,http://www.opengis.net/def/crs/EPSG/0/2154(6521761,6522840)&OUTPUTCRS=urn:ogc:def:crs:EPSG::2154
-
-Un aperçu du fichier obtenu :
-
-.. image:: _static/wcs_GetCoverageGrid.png
-
-Enfin, il est aussi possible d'utiliser SUBSET avec des coordonnées absolues pour les pixels en indiquant le paramètre &SUBSETTINGCRS=imageCRS : 
-
-https://download.data.grandlyon.com/wcs/rdata?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/tiff&COVERAGEID=Carte_agglo_Lyon_NO2_2012&SUBSET=x(100,200)&SUBSET=y(100,200)&SUBSETTINGCRS=imageCRS
-
+La requête suivante permet d'obtenir le raster au format TIFF :
+https://data.grandlyon.com/geoserver/wcs?SERVICE=WCS&VERSION=2.0.1&REQUEST=GetCoverage&FORMAT=image/tiff&COVERAGEID=grandlyon:STFONS_Step_02cm_2018
 
 
 Utilisation du service CSW
@@ -392,7 +360,7 @@ Cet exemple montre l'utilisation du service CSW pour obtenir des informations su
 
 **Etape 1** : lecture des capacités du service
 
-https://download.data.grandlyon.com/catalogue/srv/fre/csw?version=2.0.2&request=GetCapabilities&service=CSW
+https://data.grandlyon.com/geonetwork/srv/fre/csw?version=2.0.2&request=GetCapabilities&service=CSW
 
 Exemple de présentation du XML reçu (plugin CSW dans QGIS) : 
 
@@ -400,7 +368,7 @@ Exemple de présentation du XML reçu (plugin CSW dans QGIS) :
 
 **Etape 2** : recherche sur des mots clés (Réseaux de transport)
 
-Requête POST : https://download.data.grandlyon.com/catalogue/srv/fre/csw
+Requête POST : https://data.grandlyon.com/geonetwork/srv/fre/csw
 avec dans le data du POST : 
 
 .. code-block:: xml
@@ -503,7 +471,7 @@ Exemple de présentation du résultat (plugin CSW dans QGIS) :
 
 **Etape 3** : recherche sur des mots clés (Transport, Bus) et une zone géographique
 
-Requête POST : https://download.data.grandlyon.com/catalogue/srv/fre/csw
+Requête POST : https://data.grandlyon.com/geonetwork/srv/fre/csw
 avec dans le data du POST : 
 
 .. code-block:: xml
@@ -539,7 +507,7 @@ Exemple de présentation du résultat (plugin CSW dans QGIS) :
 
 **Etape 4** : chargement d'une metadata précise par son ID parmi les résultats obtenus
 
-https://download.data.grandlyon.com/catalogue/srv/fre/csw?outputFormat=application%2Fxml&service=CSW&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&request=GetRecordById&version=2.0.2&elementsetname=full&id=f5b0fe8e-f9cf-4f3c-8684-6b55d6935f6f
+https://data.grandlyon.com/geonetwork/srv/fre/csw?outputFormat=application%2Fxml&service=CSW&outputSchema=http%3A%2F%2Fwww.opengis.net%2Fcat%2Fcsw%2F2.0.2&request=GetRecordById&version=2.0.2&elementsetname=full&id=f5b0fe8e-f9cf-4f3c-8684-6b55d6935f6f
 
 XML obtenu en retour :
 

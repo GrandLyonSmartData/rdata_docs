@@ -50,7 +50,7 @@ Vos droits d'accès vous permettent d'accéder à la donnée et de la stocker su
 
 * Sur plateforme mobile, les utilisateurs accèdent directement à votre version des données. Si vos login/mot de passe change, cela affecte votre script de récupération des données uniquement et non l'application déployée chez les clients, qui de son côté peut utiliser un système d'authentification/autorisation qui vous est propre. 
 
-* Pour les performance : la récupération ponctuelle, même si elle est fréquente, affecte peu les performances de notre plateforme. Pour peu que votre infrastructure soit dimensionnée pour absorber la charge générée par votre application, vous n'aurez pas de problème à craindre de notre côté en vous y prenant ainsi.
+* Pour les performances : la récupération ponctuelle, même si elle est fréquente, affecte peu les performances de notre plateforme. Pour peu que votre infrastructure soit dimensionnée pour absorber la charge générée par votre application, vous n'aurez pas de problème à craindre de notre côté en vous y prenant ainsi.
 
 -----------------------------------
 Proxyfication
