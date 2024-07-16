@@ -415,40 +415,40 @@ Statistiques liées à un jeu de données
 Pour interroger les statistiques, les requêtes prennent la forme suivante :
 `https://data.grandlyon.com/statistiques/dataset?start=2023-02-5&uuid=4d59a6fd-f99f-47af-a0d3-8f21082a45fa&layername=sytral:tcl_sytral.tcllignebus_2_0_0&granularity=month&end=2024-02-5`
 
-```json
-[
-  {"date": "2019-04-08", "service":"wms", "count":362},
-  {"date": "2019-04-08", "service":"wfs", "count":123},
-  {"date": "2019-04-08", "service":"ws", "count":12},
-  {"date": "2019-04-08", "service":"kml", "count":2},
-  {"date": "2019-04-15", "service":"wms", "count":364},
-  {"date": "2019-04-15", "service":"wfs", "count":125},
-  {"date": "2019-04-15", "service":"ws", "count":10},
-  {"date": "2019-04-15", "service":"kml", "count":4},
-  ...
-  {"date": "2020-03-30", "service":"wms", "count":462},
-  {"date": "2020-03-30", "service":"wfs", "count":223},
-  {"date": "2020-03-30", "service":"ws", "count":22},
-  {"date": "2020-03-30", "service":"kml", "count":50},
-  {"date": "2020-04-06", "service":"wms", "count":202},
-  {"date": "2020-04-06", "service":"wfs", "count":113},
-  {"date": "2020-04-06", "service":"ws", "count":22},
-  {"date": "2020-04-06", "service":"kml", "count":7},
-]
-```
+::
+
+   [
+     {"date": "2019-04-08", "service":"wms", "count":362},
+     {"date": "2019-04-08", "service":"wfs", "count":123},
+     {"date": "2019-04-08", "service":"ws", "count":12},
+     {"date": "2019-04-08", "service":"kml", "count":2},
+     {"date": "2019-04-15", "service":"wms", "count":364},
+     {"date": "2019-04-15", "service":"wfs", "count":125},
+     {"date": "2019-04-15", "service":"ws", "count":10},
+     {"date": "2019-04-15", "service":"kml", "count":4},
+     ...
+     {"date": "2020-03-30", "service":"wms", "count":462},
+     {"date": "2020-03-30", "service":"wfs", "count":223},
+     {"date": "2020-03-30", "service":"ws", "count":22},
+     {"date": "2020-03-30", "service":"kml", "count":50},
+     {"date": "2020-04-06", "service":"wms", "count":202},
+     {"date": "2020-04-06", "service":"wfs", "count":113},
+     {"date": "2020-04-06", "service":"ws", "count":22},
+     {"date": "2020-04-06", "service":"kml", "count":7},
+   ]
 
 
 Les paramètres demandés (tous insensibles à la casse):
 
- * UUID l'uuid du jeu de données
- * layername nom de la couche de donnée
- * start : format YYYY-MM-DD la date de début, si la granularité est la semaine ou le mois et que la date est "dans" la semaine/mois, je prends le début de la semaine/mois
- * end : format YYYY-MM-DD la date de fin, si la granularité est la semaine ou le mois et que la date est "dans" la semaine/mois, je prends la fin de semaine/mois
- * granularity : day, week, year.
+* UUID l'uuid du jeu de données
+* layername nom de la couche de donnée
+* start : format YYYY-MM-DD la date de début, si la granularité est la semaine ou le mois et que la date est "dans" la semaine/mois, je prends le début de la semaine/mois
+* end : format YYYY-MM-DD la date de fin, si la granularité est la semaine ou le mois et que la date est "dans" la semaine/mois, je prends la fin de semaine/mois
+* granularity : day, week, year.
 
 Pour la réponse :
 
-Tableau de dictionnaire : un dictionnaire par élément de granularité (jour, semaine, mois)
-Le dictionnaire contient:
- * date: format YYYY-MM-DD la date de début de l'élément de granularité
- * count: le nombre de fois que la ressource a été vue, indépendamment du service (WMS/WFS...)
+Tableau de dictionnaire : un dictionnaire par élément de granularité (jour, semaine, mois). Le dictionnaire contient:
+
+* date: format YYYY-MM-DD la date de début de l'élément de granularité
+* count: le nombre de fois que la ressource a été vue, indépendamment du service (WMS/WFS...)
