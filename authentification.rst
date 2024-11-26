@@ -7,7 +7,7 @@ Principes
 -------------------
 
 Certaines des données publiées par les services Data nécessitent une autorisation pour pouvoir y accéder par API (pour les charger dans un SIG comme QGIS par exemple). 
-Afin d'en obtenir une, vous devez ouvrir un compte sur GrandLyon Connect https://moncompte.grandlyon.com/login/ pour vous connecter sur la plateforme data et ensuite définir votre mot de passe pour la plateforme data en utilisant la fonction 'changer mon mot de passe' sur la page profil de votre compte https://data.grandlyon.com/onegeo-login/fr/profile/.
+Afin d'en obtenir une, vous devez ouvrir un compte sur GrandLyon Connect https://moncompte.grandlyon.com/login/ pour vous connecter sur la plateforme data et ensuite définir votre mot de passe pour la plateforme data via la page https://data.grandlyon.com/portail/fr/mot-de-passe-oublie (nécessite d'être déconnecté de son compte).
 
 Attention les mots de passe de votre compte GrandLyon Connect et celui que vous définissez pour la plateforme peuvent et devraient être différents.
 
