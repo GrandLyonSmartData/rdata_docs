@@ -60,6 +60,23 @@ Le format généralement utilisé en WFS est le GML (Geographic Markup Language)
 
 https://data.grandlyon.com/geoserver/wfs?SERVICE=WFS&REQUEST=GetFeature&typename=pvo_patrimoine_voirie.pvotronconwebcriter&VERSION=1.1.0&OUTPUTFORMAT=geojson
 
+Service API Features
+--------------------
+
+Le service API Features est similaire au service WFS, mais offre une interface de programmation plus moderne.
+
+La racine du service se trouve ici : https://data.grandlyon.com/geoserver/ogc/features/v1/
+
+Une définition OpenAPI est disponible ici : https://data.grandlyon.com/geoserver/ogc/features/v1/openapi?f=text%2Fhtml
+
+La reqûete suivante permet de lister les jeux de données disponbiles : https://data.grandlyon.com/geoserver/ogc/features/v1/collections
+
+Le format généralement utilisé avec l'API Features est le GeoJSON, mais il est modifiable à travers le paramètre "f" (par exemple, f=application/gml+xml;version=3.2). Voici un exemple d'URL pour récupérer un jeu de données :
+
+https://data.grandlyon.com/geoserver/ogc/features/v1/collections/metropole-de-lyon:pvo_patrimoine_voirie.pvotronconwebcriter/items?f=application%2Fjson&limit=50
+
+Davantage d'informations sur ce standard peuvent être trouvées ici https://ogcapi.ogc.org/features/ et ici https://opengeospatial.github.io/e-learning/ogcapi-features/text/basic-index.html
+
 Service WCS
 -----------
 
