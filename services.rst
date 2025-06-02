@@ -410,20 +410,20 @@ Ces tuiles peuvent être utilisées par les clients web comme MapboxGL, MapLibre
 QGis peut aussi lire ces tuiles en utilisant le plugin "Vector Tiles Reader". QGIS 3.20 gère le MVT.
 
 
-Geocoder Photon
+Géocodeur Photon
 ---------------
 
 Ce service permet d'effectuer des géocodages directs (conversion d'une adresse postale ou nom de lieu en coordonnées géographiques) et inversés (conversion de coordonnées géographiques en adresse postale ou nom de lieu).
 
-Il est propulsé par l'outil libre Photon (cf. https://github.com/komoot/photon), alimenté par les données OpenStreetMap relatives à l'ancienne région Rhône-Alpes (cf. https://download.geofabrik.de/europe/france/rhone-alpes.html). 
+Il est propulsé par l'outil libre Photon (cf. https://github.com/komoot/photon), alimenté par les données d'adresses de la Métropole de Lyon, publiée sur la Base d'Adresses Nationale (https://data.grandlyon.com/portail/fr/jeux-de-donnees/base-adresse-locale-metropole-lyon-bal). 
 
 La documentation officielle de l'API de recherche de Photon est renseignée sur GitHub, https://github.com/komoot/photon#search-api.
 
 Le lien pour réaliser une requête est le suivant (remplacer les .. par le lieu à géocoder): 
-https://download.data.grandlyon.com/geocoding/photon/api?q=...
+https://download.data.grandlyon.com/geocoding/photon-bal/api?q=...
 Exemples : 
-https://download.data.grandlyon.com/geocoding/photon/api?q=lyon 
-https://download.data.grandlyon.com/geocoding/photon/api?q=%22Rue%20garibaldi%22
+https://download.data.grandlyon.com/geocoding/photon-bal/api?q=lyon 
+https://download.data.grandlyon.com/geocoding/photon-bal/api?q=%22Rue%20garibaldi%22
 
 
 Statistiques liées à un jeu de données
