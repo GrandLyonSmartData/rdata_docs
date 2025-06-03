@@ -469,10 +469,7 @@ identifiant nom              type_decheterie horaires                           
 21          Lyon 1           Mobile          Ve 14:00-20:00                                                2022-12-02
 =========== ================ =============== ============================================================= ========== ========
 
-résultat en openinghours OSM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Pour la déchèterie 1 (Caluire)
+Pour la déchèterie 1 (Caluire), ci-dessous le résultat en openinghours OSM:
 
 ``Mo-Fr 09:00-12:00,14:00-17:00, Sa 09:00-17:00, Su 09:00-12:00; 2023 Apr 01-2023 Oct 30 Mo-Fr 08:30-12:00,13:30-18:00, Sa 08:30-18:30, Su 09:00-12:00; 2024 Apr 01-2024 Oct 30 Mo-Fr 08:30-12:00,13:30-18:00, Sa 08:30-18:30, Su 09:00-12:00; 2023 Apr 10 closed "Lundi de Pâques"; 2023 May 01 closed "1er mai"; 2023 May 08 closed "8 mai"; 2023 May 18 closed "Ascension"; 2023 May 29 closed "Lundi de Pentecôte"; 2023 Jul 14 closed "14 juillet"; 2023 Aug 15 closed "Assomption"; 2023 Nov 01 closed "Toussaint"; 2023 Nov 11 closed "11 novembre"; 2023 Dec 24 Su 09:00-12:00,14:00-16:00; 2023 Dec 25 closed "Jour de Noël"; 2023 Dec 31 Su 09:00-12:00,14:00-16:00; 2024 Jan 01 closed "1er janvier"; 2024 Apr 01 closed "Lundi de Pâques"; 2024 May 01 closed "1er mai"; 2024 May 08 closed "8 mai"; 2024 May 09 closed "Ascension"; 2024 May 20 closed "Lundi de Pentecôte"; 2024 Jul 14 closed "14 juillet"; 2024 Aug 15 closed "Assomption"; 2024 Nov 01 closed "Toussaint"; 2024 Nov 11 closed "11 novembre"; 2024 Dec 24 Tu 09:00-12:00,14:00-16:00; 2024 Dec 25 closed "Jour de Noël"; 2024 Dec 31 Tu 09:00-12:00,14:00-16:00``
 
@@ -513,10 +510,7 @@ S1392       Mairie de Montanay                                                  
 S1392       Mairie de Montanay                                                                                                                   Vacances
 =========== ========================== ========================================================================================================= ======================== ========
 
-résultat en openinghours OSM
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Pour la mairie S1324 (Albigny)
+Pour la mairie S1324 (Albigny), voici le résultat en openinghours OSM:
 
 ``Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Sa 09:00-12:00; 2023 Feb 04-2023 Feb 19 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances d'Hiver"; 2023 Apr 08-2023 Apr 23 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de Printemps"; 2023 Oct 21-2023 Nov 05 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de la Toussaint"; 2023 Dec 23-2024 Jan 07 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de Noël"; 2024 Feb 17-2024 Mar 03 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances d'Hiver"; 2024 Apr 13-2024 Apr 28 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de Printemps"; 2024 Oct 19-2024 Nov 03 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de la Toussaint"; 2024 Dec 21-2025 Jan 05 Mo-Fr 08:30-12:30, Mo,We 13:30-17:30, Tu,Th 08:30-12:30 "sur rendez-vous uniquement", Fr 13:30-16:30 "Vacances de Noël"; 2023 Apr 10 closed "Lundi de Pâques"; 2023 May 01 closed "1er mai"; 2023 May 08 closed "8 mai"; 2023 May 18 closed "Ascension"; 2023 May 29 closed "Lundi de Pentecôte"; 2023 Jul 14 closed "14 juillet"; 2023 Aug 15 closed "Assomption"; 2023 Nov 01 closed "Toussaint"; 2023 Nov 11 closed "11 novembre"; 2023 Dec 25 closed "Jour de Noël"; 2024 Jan 01 closed "1er janvier"; 2024 Apr 01 closed "Lundi de Pâques"; 2024 May 01 closed "1er mai"; 2024 May 08 closed "8 mai"; 2024 May 09 closed "Ascension"; 2024 May 20 closed "Lundi de Pentecôte"; 2024 Jul 14 closed "14 juillet"; 2024 Aug 15 closed "Assomption"; 2024 Nov 01 closed "Toussaint"; 2024 Nov 11 closed "11 novembre"; 2024 Dec 25 closed "Jour de Noël"``
 
