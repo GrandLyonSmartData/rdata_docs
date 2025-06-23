@@ -438,7 +438,7 @@ Les résultats sont retournés selon le type d'objets OSM (Open Street Map) et c
 ================= ======= =========== ====================== ==========================================================================================================
 type d'objet      tag OSM valeur tag  afficher plutôt        exemple
 ================= ======= =========== ====================== ==========================================================================================================
-Adresse           place   house       housenumer + street    `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=37%20rue%20du%20Repos,%20Lyon>`_
+Adresse           place   house       housenumber + street   `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=37%20rue%20du%20Repos,%20Lyon>`_
 Voie              highway street      street                 `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=rue%20du%20Repos,%20Lyon>`_
 Commune           place   city        city                   `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=Villeurbanne>`_
 ================= ======= =========== ====================== ==========================================================================================================
