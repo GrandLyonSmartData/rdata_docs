@@ -441,7 +441,7 @@ type d'objet      tag OSM valeur tag  afficher plutôt        exemple
 Adresse           place   house       housenumer + street    `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=37%20rue%20du%20Repos,%20Lyon>`_
 Voie              highway street      street                 `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=rue%20du%20Repos,%20Lyon>`_
 Commune           place   city        city                   `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=Villeurbanne>`_
-
+================= ======= =========== ====================== ==========================================================================================================
 Pour les Points d'intérêt, voir le chapitre plus bas pour les tags spécifiques à ces données
 
 A noter que la valeur de tag est également reprise dans l'attribut 'type' de la réponse de l'API.
@@ -483,14 +483,14 @@ https://download.data.grandlyon.com/geocoding/photon-bal/api?q=parc%20blandan
 
 Selon le type du point d'intérêt, le résultat comporte un tag (osm_key) et une valeur de tag (osm_value) spécifiques, qui correspondent à ceux utilisés dans le cadre de l'usage de données Open Street Map (OSM). Voici ci-dessous la liste des types de points d'intérêt exploités, la source de ces données sur le portail data, les tags OSM associés et leurs valeurs:
 
-========================================================================================================== ======= =============== ======================================================================================================================================
-Point d'intérêt                                                                                            tag OSM valeur tag      exemple
-========================================================================================================== ======= =============== ======================================================================================================================================
-`Parcs et jardins <https://data.grandlyon.com/portail/fr/jeux-de-donnees/parcs-jardins-metropole-lyon>`_   leisure park            `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=parc%20blandan>`_
-`Mairies <https://data.grandlyon.com/portail/fr/jeux-de-donnees/mairies-metropole-lyon-point-interet-v2>`_ amenity townhall        `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=mairie%20de%20bron>`_
-`Maisons de la Métropole <https://data.grandlyon.com/portail/fr/jeux-de-donnees/maisons-metropole-lyon>`_  amenity social_facility `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=maison%20de%20la%20m%C3%A9tropole%20-%20givors>`_
-`Piscines <https://data.grandlyon.com/portail/fr/jeux-de-donnees/piscines-metropole-lyon-point-interet>`_  leisure sports_centre   `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=centre%20nautique%20tony>`_
-========================================================================================================== ======= =============== ======================================================================================================================================
+=========================================================================================================== ======= =============== ============================================================================================================================
+Point d'intérêt                                                                                             tag OSM valeur tag      exemple
+=========================================================================================================== ======= =============== ============================================================================================================================
+`Parcs et jardins <https://data.grandlyon.com/portail/fr/jeux-de-donnees/parcs-jardins-metropole-lyon>`_    leisure park            `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=parc%20blandan>`_
+`Mairies <https://data.grandlyon.com/portail/fr/jeux-de-donnees/mairies-metropole-lyon-point-interet-v2>`_  amenity townhall        `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=mairie%20de%20bron>`_
+`Maisons de la Métropole <https://data.grandlyon.com/portail/fr/jeux-de-donnees/maisons-metropole-lyon>`_   amenity social_facility `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=maison%20de%20la%20m%C3%A9tropole%20-%20givors>`_
+`Piscines <https://data.grandlyon.com/portail/fr/jeux-de-donnees/piscines-metropole-lyon-point-interet>`_   leisure sports_centre   `exemple <https://download.data.grandlyon.com/geocoding/photon-bal/api?q=centre%20nautique%20tony>`_
+=========================================================================================================== ======= =============== ============================================================================================================================
 
 Concernant les points d'intérêt, le nom principal du point est contenu dans l'attribut 'name', mais il peut être utile d'afficher l'adresse et/ou la commune selon l'application.
 
