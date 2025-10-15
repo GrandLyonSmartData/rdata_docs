@@ -494,6 +494,8 @@ Point d'intérêt                                                               
 
 Concernant les points d'intérêt, le nom principal du point est contenu dans l'attribut 'name', mais il peut être utile d'afficher l'adresse et/ou la commune selon l'application.
 
+Sur certains points d'intérêts, un tag 'alt_name' a été ajouté qui contient les dénominations alternatives des lieux (par ex, 'Piscine du Rhône' pour le Centre Nautique Tony Bertrand), ce qui permet leur recherche dans Photon.
+
 Pour différencier les adresses des points d'intérêt, le tag 'extra' a été enrichi avec un tag 'extra'->'espace_public'. Ce tag 'espace_public' est un booléen, qui prend la valeur 'true' (si l'objet retourné est un point d'intérêt) ou n'est pas présent (si c'est une adresse ou une voie).
 
 Oullins-Pierre-Bénite
