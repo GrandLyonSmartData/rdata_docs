@@ -8,15 +8,15 @@ Principes
 
 Certaines des données publiées par les services Data nécessitent une autorisation pour pouvoir y accéder par API (pour les charger dans un SIG comme QGIS par exemple). Afin d’en obtenir une, vous devez réaliser 2 opérations successives :
 
-- Ouvrir un compte sur GrandLyon Connect https://moncompte.grandlyon.com/login/ (service de fédération d'identité) pour vous connecter sur la plateforme data
+- Ouvrir un compte sur proConnect ou GrandLyon Connect (services de fédération d'identité) pour vous connecter sur la plateforme data
 
 - Ensuite définir votre mot de passe pour la plateforme data via la page https://data.grandlyon.com/portail/fr/mot-de-passe-oublie (nécessite d’être déconnecté de son compte).
 
 Une fois ces opérations réalisées, vous aurez 2 comptes distincts avec le même identifiant :
 
-Le compte GrandLyon Connect qui permet d'accéder aux différents services numériques proposés par la Métropole de Lyon, comme le service d'assistance aux utilisateurs ou Toodego pour vos démarches administratives sur le territoire de la Métropole. Ce compte vous permet de vous connecter à la plateforme et naviguer pour retrouver / visualiser les données soumises à authentification.
+- Le compte ProConnect ou GrandLyon Connect (ce dernier permet d'accéder aux différents services numériques proposés par la Métropole de Lyon, comme le service d'assistance aux utilisateurs ou Toodego pour vos démarches administratives sur le territoire de la Métropole). Ce compte vous permet de vous connecter à la plateforme et naviguer pour retrouver / visualiser les données soumises à authentification.
 
-Le compte de la plateforme Data qui est un compte technique (identifiant et mot de passe spécifiques à la plateforme Data) vous permettant d'accéder aux données de la plateforme via API.
+- Le compte de la plateforme Data, qui est un compte technique (identifiant et mot de passe spécifiques à la plateforme Data) vous permettant d'accéder aux données de la plateforme via API.
 
 Attention les mots de passe de votre compte GrandLyon Connect et celui que vous définissez pour la plateforme peuvent et devraient être différents.
 
@@ -27,7 +27,7 @@ Comment réinitialiser les mots de passe en cas d'oubli ?
 - Compte GrandLyon Connect : Mot de passe oublié ? de la page GrandLyon Connect : https://moncompte.grandlyon.com/login/?next=/accounts/profile/
 - Compte Plateforme Data (API) : Mot de passe oublié ? de la page de connexion de la plateforme data https://data.grandlyon.com/portail/fr/connexion
 
-Comment utiliser ces éléments d'identification pour accéder à des données protégées. 
+Comment utiliser ces éléments d'identification pour accéder à des données protégées ?
 --------------------------
 
 La méthode d'authentification utilisée est le `Basic Auth HTTP <http://fr.wikipedia.org/wiki/Authentification_HTTP#M.C3.A9thode_Basic>`_ Lors de l'accès à chacun des types de services, il est donc nécessaire d'utiliser le header HTTP nommé 'Authorization' dans lequel seront insérés login et mot de passe, séparés par deux points (":") et encodé en `base64 <http://fr.wikipedia.org/wiki/Base64>`_. Le header ressemble alors à ceci :
@@ -39,7 +39,7 @@ La méthode d'authentification utilisée est le `Basic Auth HTTP <http://fr.wiki
 Mais ne vous y méprenez pas. L'encodage en base64 n'est pas un cryptage ! Le procédé est réversible et on peut donc retrouver les valeurs encodés très facilement. Couplé à un flux HTTPS, qui crypte les informations transmises par et vers le serveur, ils ne sont pas récupérables, mais écrits tels quels dans le code ils le sont. 
 
 
-Exemple avec cURL et WGET
+Exemple avec curl et wget
 --------------------------
 
 L'utilisation du header authorization avec cURL est très simple. Imaginons un utilisateur doté des identifiants suivants :
@@ -47,15 +47,15 @@ L'utilisation du header authorization avec cURL est très simple. Imaginons un u
 * login : demo
 * password : demo4dev
 
-L'instruction cURL à utiliser pour accéder à la donnée "demo.demovelov" sur le service data serait alors :
+L'instruction curl à utiliser pour accéder à la donnée "demo.demovelov" sur le service data serait alors :
 
 ::
 
-    cURL -u demo:demo4dev curl https://data.grandlyon.com/fr/datapusher/ws/rdata/tcl_sytral.tcllignebus_2_0_0/all.json?compact=false
+    curl -u demo:demo4dev https://data.grandlyon.com/fr/datapusher/ws/rdata/tcl_sytral.tcllignebus_2_0_0/all.json?compact=false
 
 sauf erreur, vous devriez alors recevoir un flux json. 
 
-L'instruction WGET à utiliser est comparable : 
+L'instruction wget à utiliser est comparable : 
 
 :: 
 
