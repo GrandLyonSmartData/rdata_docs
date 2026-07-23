@@ -8,18 +8,17 @@ Principes
 
 Certaines des données publiées par les services Data nécessitent une autorisation pour pouvoir y accéder par API (pour les charger dans un SIG comme QGIS par exemple). Afin d’en obtenir une, vous devez réaliser 2 opérations successives :
 
-- Ouvrir un compte sur proConnect ou GrandLyon Connect (services de fédération d'identité) pour vous connecter sur la plateforme data
+- Ouvrir un compte sur GrandLyon Connect (service de fédération d'identité permettant d'accéder aux différents services numériques proposés par la Métropole de Lyon, comme le service d'assistance aux utilisateurs ou Toodego pour vos démarches administratives sur le territoire de la Métropole) ou utiliser votre compte professionnel ProConnect pour vous connecter sur la plateforme data : https://data.grandlyon.com/portail/fr/connexion
 
 - Ensuite définir votre mot de passe pour la plateforme data via la page https://data.grandlyon.com/portail/fr/mot-de-passe-oublie (nécessite d’être déconnecté de son compte).
 
-Une fois ces opérations réalisées, vous aurez 2 comptes distincts avec le même identifiant :
+Une fois ces opérations réalisées, vous aurez 2 comptes distincts avec le même identifiant : 
 
-- Le compte ProConnect ou GrandLyon Connect (ce dernier permet d'accéder aux différents services numériques proposés par la Métropole de Lyon, comme le service d'assistance aux utilisateurs ou Toodego pour vos démarches administratives sur le territoire de la Métropole). Ce compte vous permet de vous connecter à la plateforme et naviguer pour retrouver / visualiser les données soumises à authentification.
+- Le compte GrandLyon Connect ou ProConnect. Ce compte vous permet de vous connecter à la plateforme et naviguer pour retrouver / visualiser les données soumises à authentification.
 
 - Le compte de la plateforme Data, qui est un compte technique (identifiant et mot de passe spécifiques à la plateforme Data) vous permettant d'accéder aux données de la plateforme via API.
 
-Attention les mots de passe de votre compte GrandLyon Connect et celui que vous définissez pour la plateforme peuvent et devraient être différents.
-
+Attention les mots de passe de votre compte GrandLyon Connect ou ProConnect et celui que vous définissez pour la plateforme doivent être différents.
 Ceux-ci vous sont personnels, et leur utilisation dans le contexte du développement d’application pour les tiers doit donc être fait avec certaines précautions.
 
 Comment réinitialiser les mots de passe en cas d'oubli ?
